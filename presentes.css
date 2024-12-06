@@ -1,0 +1,325 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.presentes {
+    text-align: center;
+    margin: 10px auto;
+    padding: 40px;
+}
+
+.presentes h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    color: #3d72d5;
+    margin-bottom: 50px;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Limita para exatamente 4 colunas */
+    gap: 30px; /* Espaçamento entre os itens */
+    padding: 0 60px; /* Adiciona espaço nas laterais */
+    box-sizing: border-box; /* Garante que o padding não afete o tamanho do grid */
+}
+
+.produto {
+    display: flex;
+    flex-direction: column; /* Garante alinhamento vertical dos elementos */
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%; /* Ajusta automaticamente o tamanho pelo grid */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.produto:hover {
+    transform: scale(1.05); /* Zoom ao passar o mouse */
+}
+
+.produto img {
+    width: 100%; /* Ocupa toda a largura disponível do contêiner */
+    height: auto; /* Ajusta a altura automaticamente */
+    aspect-ratio: 1 / 1; /* Define proporção fixa (quadrado) */
+    object-fit: cover; /* Preenche o quadrado sem distorcer a imagem */
+    border-radius: 10px; /* Mantém as bordas arredondadas */
+    margin-bottom: 15px; /* Espaçamento entre imagem e texto */
+}
+
+.produto h2 {
+    font-size: 1.5rem;
+    color: #3d72d5;
+    margin-bottom: 10px;
+}
+
+.produto p {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+.produto .valor {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #3d72d5;
+    margin-top: 10px; /* Espaçamento entre a descrição e o valor */
+}
+
+.btn-presentear {
+    background-color: #3d72d5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-presentear:hover {
+    background-color: #2597de;
+}
+
+.modal {
+    display: none; /* Oculta a modal inicialmente */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    color: #3d72d5;
+    margin-bottom: 15px;
+}
+
+.modal-imagem, .modal-qr {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 10px auto;
+}
+
+.modal-valor {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3d72d5;
+    margin: 15px 0;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.modal-qr {
+    max-width: 190px;
+    max-height: 190px;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-texto {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn-enviar {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #c12e2a;
+}
+
+.btn-pix, .btn-cartao {
+    background-color: #3e8e41;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-copiar {
+    background-color: #3e8e41;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-pix, .btn-cartao, .btn-copiar, .btn-enviar {
+    width: 100%; /* Botões mais largos */
+    max-width: 300px;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.btn-copiar:hover {
+    background-color: #2d6f34;
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+
+/*INICIO DA COMPARAÇÃO*/
+
+/* Estilos do menu lateral */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Esconde o menu fora da tela à direita */
+    width: 250px;
+    height: 100%;
+    background: #3d72d5;
+    box-shadow: -2px 0px 5px rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.2s ease-in-out;
+}
+
+.menu-lateral li a:hover {
+    color: #87cefa;
+}
+
+.menu-lateral.ativo {
+    right: 0; /* Move o menu para dentro da tela */
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Para telas menores */
+@media (max-width: 768px) {
+    /* Ajuste do grid dos produtos */
+    .produtos {
+        grid-template-columns: 1fr; /* Apenas uma coluna */
+    }
+
+    /* Menu responsivo */
+    .menu {
+        display: none; /* Ocultar o menu padrão */
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px; /* Ajuste de acordo com a altura do cabeçalho */
+        right: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu.menu-ativo {
+        display: flex; /* Exibe o menu ao ativar a classe */
+    }
+
+    .hamburger-menu {
+        display: block; /* Mostrar o botão de hambúrguer */
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .produtos {
+        grid-template-columns: 1fr; /* Apenas uma coluna */
+        padding: 0 20px; /* Reduz o espaçamento lateral */
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+

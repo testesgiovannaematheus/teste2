@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presentes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="presentes.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo do Casamento">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#local">Local da Cerimônia</a></li>
+                <li><a href="presentes.html">Lista de Presentes</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger-menu" aria-label="Menu">
+            &#9776;
+        </button>
+
+        <nav class="menu-lateral">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#local">Local da Cerimônia</a></li>
+                <li><a href="presentes.html">Lista de Presentes</a></li>
+            </ul>
+        </nav>
+        
+
+    </header>
+
+    <main>
+        <section class="presentes">
+
+            <h1>Lista de Presentes</h1>
+            <div class="produtos">
+                <div class="produto">
+                    <img src="airfrayer.png" alt="AirFrayer">
+                    <h2>AirFrayer</h2>
+                    <p>Presenteie os noivos com uma super airfrayer</p>
+                    <p class="valor">R$ 200,00</p>
+                    <button class="btn-presentear">Presentear</button>
+                </div>
+                <div class="produto">
+                    <img src="faqueiro.png" alt="Faqueiro Inox">
+                    <h2>Faqueiro Inox</h2>
+                    <p>Presenteie os noivos com jogo de talheres 72 peças</p>
+                    <p class="valor">R$ 500,00</p>
+                    <button class="btn-presentear">Presentear</button>
+                </div>
+                <div class="produto">
+                    <img src="tv.png" alt="Televisão 43 Polegadas">
+                    <h2>Televisão 43 Polegadas</h2>
+                    <p>Presenteie os noivos com uma televisão</p>
+                    <p class="valor">R$ 1.500,00</p>
+                    <button class="btn-presentear">Presentear</button>
+                </div>
+
+                <div class="produto">
+                    <img src="fogao.png" alt="Fogao">
+                    <h2>Fogão de Indução</h2>
+                    <p>Presenteie os noivos com um lindo fogão de indução</p>
+                    <p class="valor">R$ 1.600,00</p>
+                    <button class="btn-presentear">Presentear</button>
+                </div>
+                
+                <div class="produto">
+                    <img src="sofa.png" alt="Sofá retrátil">
+                    <h2>Sofá retrátil</h2>
+                    <p>Presenteie os noivos com um novo conforto</p>
+                    <p class="valor">R$ 2.600,00</p>
+                    <button class="btn-presentear">Presentear</button>
+                </div>
+
+                <div class="produto">
+                    <img src="geladeira.png" alt="Geladeira">
+                    <h2>Geladeira</h2>
+                    <p>Presenteie os noivos com uma nova geladeira!</p>
+                    <p class="valor">R$ 3.000,00</p>
+                    <button class="btn-presentear">Presentear</button>
+                </div>
+
+                
+            </div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <img id="modal-imagem" class="modal-imagem" alt="Imagem do Produto">
+            <h2 id="modal-nome"></h2>
+            <p id="modal-valor" class="modal-valor"></p>
+
+            <div id="modal-cartao" class="modal-body" style="display: none;"></div>
+
+            <div id="modal-inicial" class="modal-body">
+                <button id="btn-pix" class="btn-pix">Pagar com Pix</button>
+                <button id="btn-cartao" class="btn-cartao">Pagar com Cartão</button>
+            </div>
+    
+            <div id="modal-pix" class="modal-body" style="display: none;">
+                <img id="modal-qr" class="modal-qr" alt="QR Code do Pix">
+                <button id="btn-copiar" class="btn-copiar">Copiar código Pix</button>
+            </div>
+
+        </div>
+    </div>
+    
+
+    <footer class="site-footer">
+        <div class="footer-logo">
+            <img src="logo.png" alt="Logo do Casamento">
+        </div>
+        <p>Site by Giovanna e Matheus</p>
+    </footer>
+
+    <script src="presentes.js"></script>
+    
+</body>
+</html>

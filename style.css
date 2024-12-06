@@ -1,0 +1,357 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f8f2; /* Tom claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+.site-header {
+    background-color: #3d72d5; /* Verde mais escuro */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header .logo img {
+    height: 50px;
+}
+
+.site-header .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.site-header .menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.site-header .menu li a:hover {
+    background-color: #79a1eb; /* Destaque ao passar o mouse */
+    border-radius: 5px;
+}
+
+/* Estilos do menu lateral */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Esconde o menu fora da tela à direita */
+    width: 250px;
+    height: 100%;
+    background: #3d72d5;
+    box-shadow: -2px 0px 5px rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.2s ease-in-out;
+}
+
+.menu-lateral li a:hover {
+    color: #87cefa;
+}
+
+.menu-lateral.ativo {
+    right: 0; /* Move o menu para dentro da tela */
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Apenas em telas menores */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+/* Seção Principal */
+.hero-section {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px; /* Adiciona espaçamento inferior */
+}
+
+
+.hero-image {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.contador {
+    margin: 20px auto; /* Espaçamento acima/abaixo */
+    text-align: center;
+    background-color: #3d72d5; /* Fundo similar */
+    padding: 20px; /* Mesma proporção do retângulo "O Casal" */
+    border-radius: 10px; /* Arredondamento consistente */
+    color: white;
+    max-width: 800px; /* Mesma largura máxima */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra idêntica */
+}
+
+.contador h1 {
+    font-size: 1.8rem; /* Tamanho similar ao título "O Casal" */
+    margin-bottom: 15px; /* Espaçamento consistente */
+    font-weight: 600; /* Fonte com destaque */
+}
+
+.contador-grid {
+    display: flex;
+    justify-content: space-evenly; /* Espaçamento uniforme */
+    gap: 20px; /* Maior espaçamento entre os itens */
+}
+
+.contador-item {
+    text-align: center;
+}
+
+.retangulo {
+    background-color: white;
+    color: #3d72d5;
+    width: 100px; /* Mesmo tamanho do retângulo da seção "O Casal" */
+    height: 100px; /* Altura igual */
+    border-radius: 10px; /* Bordas arredondadas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Mesma fonte */
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+
+
+/* Seção "O Casal" */
+.secao-casal {
+    text-align: justify; /* Justifica o texto */
+    margin: 50px auto; /* Adiciona margem para espaçamento */
+    padding: 20px; /* Espaçamento interno */
+    max-width: 800px; /* Largura máxima */
+    line-height: 1.8; /* Melhor espaçamento entre linhas */
+    background-color: #f9f9f9; /* Fundo branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.secao-casal h2 {
+    text-align: center; /* Centraliza o título */
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #3d72d5;
+    margin-bottom: 20px;
+}
+
+.secao-casal p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+
+/* Galeria de Fotos */
+.galeria-fotos {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    display: block;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow.left-arrow {
+    left: 10px;
+}
+
+.arrow.right-arrow {
+    right: 10px;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.thumbnails img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.thumbnails img:hover,
+.thumbnails img.active {
+    border-color: #3d72d5;
+}
+
+.local-cerimonia {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.mapa-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.secao-informacoes {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.secao-informacoes h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #3d72d5;
+    margin-bottom: 20px;
+}
+
+.secao-informacoes p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+}
+
+.secao-informacoes {
+    text-align: justify; /* Justifica o texto */
+    margin: 50px auto; /* Centraliza a seção horizontalmente */
+    padding: 20px;
+    max-width: 800px; /* Define a largura máxima da seção */
+    line-height: 1.8; /* Adiciona espaçamento entre linhas para melhor legibilidade */
+    background-color: #f9f9f9; /* Adiciona um fundo claro para destacar a seção */
+    border-radius: 10px; /* Bordas arredondadas para um visual mais elegante */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+}
+
+.secao-informacoes h2 {
+    text-align: center; /* Centraliza o título */
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #3d72d5;
+    margin-bottom: 20px;
+}
+
+.secao-informacoes p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: justify; /* Justifica o texto */
+}
+
+
+.site-footer {
+    background-color: #3d72d5; /* Mesma cor do cabeçalho */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar o rodapé */
+}
+
+.site-footer .footer-logo img {
+    height: 50px; /* Mesmo tamanho do logo no cabeçalho */
+    margin-bottom: 10px; /* Espaçamento entre o logo e o texto */
+}
+
+.site-footer p {
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove margens padrão */
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .contador {
+        padding: 15px;
+        max-width: 90%; /* Ocupa mais espaço na tela */
+    }
+
+    .contador h1 {
+        font-size: 1.5rem; /* Reduz título para telas menores */
+    }
+
+    .retangulo {
+        width: 80px; /* Ajusta proporcionalmente */
+        height: 80px;
+        font-size: 1.2rem; /* Fonte menor */
+    }
+}
+
